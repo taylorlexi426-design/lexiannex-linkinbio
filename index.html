@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiAnneX | Adult Content Creator</title>
+    <meta name="description" content="LexiAnneX - Adult Content Creator. Find all my links here.">
+    <link rel="icon" type="image/png" href="assets/profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --pink: #ff1493;
+            --pink-light: #ff69b4;
+            --pink-glow: rgba(255, 20, 147, 0.6);
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--black);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, var(--pink-glow) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--pink-glow) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 20, 147, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Floating hearts animation */
+        .hearts-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--pink);
+            opacity: 0.3;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 420px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Age verification banner */
+        .age-warning {
+            background: linear-gradient(135deg, var(--dark-gray), #2a2a2a);
+            border: 2px solid var(--pink);
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 0 20px var(--pink-glow);
+        }
+
+        .age-warning p {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .age-warning strong {
+            color: var(--pink);
+        }
+
+        /* Profile section */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--pink);
+            box-shadow: 
+                0 0 30px var(--pink-glow),
+                0 0 60px var(--pink-glow);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 30px var(--pink-glow),
+                    0 0 60px var(--pink-glow);
+            }
+            50% {
+                box-shadow: 
+                    0 0 40px var(--pink-glow),
+                    0 0 80px var(--pink-glow),
+                    0 0 100px var(--pink-glow);
+            }
+        }
+
+        .brand-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 42px;
+            color: var(--pink);
+            text-shadow: 
+                0 0 10px var(--pink-glow),
+                0 0 20px var(--pink-glow),
+                0 0 40px var(--pink-glow);
+            animation: neon 2s ease-in-out infinite;
+        }
+
+        @keyframes neon {
+            0%, 100% {
+                text-shadow: 
+                    0 0 10px var(--pink-glow),
+                    0 0 20px var(--pink-glow),
+                    0 0 40px var(--pink-glow);
+            }
+            50% {
+                text-shadow: 
+                    0 0 20px var(--pink-glow),
+                    0 0 40px var(--pink-glow),
+                    0 0 60px var(--pink-glow),
+                    0 0 80px var(--pink-glow);
+            }
+        }
+
+        .tagline {
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tagline .star {
+            color: var(--pink);
+            font-size: 16px;
+        }
+
+        /* Links section */
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--dark-gray), #252525);
+            border: 2px solid var(--pink);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 20, 147, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--pink-glow);
+            background: linear-gradient(135deg, var(--pink), var(--pink-light));
+            color: #fff;
+        }
+
+        .link-btn:hover::before {
+            left: 100%;
+        }
+
+        .link-btn i {
+            font-size: 20px;
+            color: var(--pink);
+            transition: color 0.3s ease;
+        }
+
+        .link-btn:hover i {
+            color: #fff;
+        }
+
+        /* Special styling for premium links */
+        .link-btn.premium {
+            background: linear-gradient(135deg, var(--pink), var(--pink-light));
+            border-color: #fff;
+        }
+
+        .link-btn.premium i {
+            color: #fff;
+        }
+
+        .link-btn.premium:hover {
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            color: var(--pink);
+        }
+
+        .link-btn.premium:hover i {
+            color: var(--pink);
+        }
+
+        /* Snapchat QR section */
+        .snapchat-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--dark-gray), #252525);
+            border: 2px solid var(--pink);
+            border-radius: 20px;
+            box-shadow: 0 0 20px var(--pink-glow);
+        }
+
+        .snapchat-section h3 {
+            color: #fff;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .snapchat-section h3 i {
+            color: #FFFC00;
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .footer .copyright {
+            color: var(--pink);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: var(--pink);
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            transform: scale(1.2);
+            text-shadow: 0 0 20px var(--pink-glow);
+        }
+
+        /* Logo stars image */
+        .logo-stars {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 36px;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .link-btn {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="hearts-container">
+        <div class="heart" style="left: 10%; animation-delay: 0s;">♥</div>
+        <div class="heart" style="left: 20%; animation-delay: 2s;">♥</div>
+        <div class="heart" style="left: 30%; animation-delay: 4s;">♥</div>
+        <div class="heart" style="left: 40%; animation-delay: 1s;">♥</div>
+        <div class="heart" style="left: 50%; animation-delay: 3s;">♥</div>
+        <div class="heart" style="left: 60%; animation-delay: 5s;">♥</div>
+        <div class="heart" style="left: 70%; animation-delay: 2.5s;">♥</div>
+        <div class="heart" style="left: 80%; animation-delay: 4.5s;">♥</div>
+        <div class="heart" style="left: 90%; animation-delay: 1.5s;">♥</div>
+    </div>
+
+    <div class="container">
+        <!-- Age Verification Warning -->
+        <div class="age-warning">
+            <p><strong>18+ ONLY</strong> - This page contains links to adult content. By continuing, you confirm you are of legal age in your jurisdiction.</p>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <img src="assets/profile.jpg" alt="LexiAnneX" class="profile-image">
+            <h1 class="brand-name">LexiAnneX</h1>
+            <p class="tagline">
+                <span class="star">★</span>
+                Adult Content Creator
+                <span class="star">★</span>
+            </p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links">
+            <!-- OnlyFans - Placeholder -->
+            <a href="#" class="link-btn premium" title="Coming Soon">
+                <i class="fa-solid fa-lock"></i>
+                OnlyFans (Coming Soon)
+            </a>
+
+            <!-- Pornhub -->
+            <a href="https://www.pornhub.com/model/AnalSexAlexis" target="_blank" rel="noopener" class="link-btn">
+                <i class="fa-solid fa-play-circle"></i>
+                Pornhub
+            </a>
+
+            <!-- Blogger -->
+            <a href="https://alexistaylor426.com" target="_blank" rel="noopener" class="link-btn">
+                <i class="fa-solid fa-blog"></i>
+                My Blog
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@lexi.anne.x" target="_blank" rel="noopener" class="link-btn">
+                <i class="fa-brands fa-tiktok"></i>
+                TikTok
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/16jp78ak2j/" target="_blank" rel="noopener" class="link-btn">
+                <i class="fa-brands fa-facebook"></i>
+                Facebook
+            </a>
+
+            <!-- Snapchat -->
+            <a href="https://www.snapchat.com/add/lexianne.taylor" target="_blank" rel="noopener" class="link-btn">
+                <i class="fa-brands fa-snapchat"></i>
+                Snapchat
+            </a>
+
+            <!-- Pinterest -->
+            <a href="https://pin.it/FgA2pJmhD" target="_blank" rel="noopener" class="link-btn">
+                <i class="fa-brands fa-pinterest"></i>
+                Pinterest
+            </a>
+        </div>
+
+        <!-- Snapchat QR Code Section -->
+        <div class="snapchat-section">
+            <h3><i class="fa-brands fa-snapchat"></i> Scan to Add Me on Snapchat</h3>
+            <img src="assets/snapchat-qr.jpg" alt="Snapchat QR Code" class="qr-code">
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@lexi.anne.x" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/share/16jp78ak2j/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.snapchat.com/add/lexianne.taylor" target="_blank" rel="noopener"><i class="fa-brands fa-snapchat"></i></a>
+                <a href="https://pin.it/FgA2pJmhD" target="_blank" rel="noopener"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+            <p style="margin-top: 15px;">
+                <span class="copyright">LexiAnneX</span> © 2026
+            </p>
+            <p style="margin-top: 5px; color: #444;">#LexiAnneX</p>
+        </footer>
+    </div>
+</body>
+</html>
